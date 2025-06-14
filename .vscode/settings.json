@@ -1,0 +1,55 @@
+{
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.pythonProjects": [],
+    // Enable agent mode for Copilot Chat. When this is enabled, agent mode can be activated via the dropdown in the view.
+    "chat.agent.enabled": true,
+    // The maximum number of requests to allow Copilot Edits to use per-turn in agent mode. When the limit is reached, 
+    // Copilot will ask the user to confirm that it should keep working.
+    "chat.agent.maxRequests": 100,
+    // Copilot が応答するロケール (例: 'en'、'fr') を指定します。
+    // 既定では、Copilot は、VS Codeの構成された表示言語ロケールを使用して応答します。
+    //  - auto: Use VS Code's configured display language
+    //  - en: English
+    //  - fr: français
+    //  - it: italiano
+    //  - de: Deutsch
+    //  - es: español
+    //  - ru: русский
+    //  - zh-CN: 中文(简体)
+    //  - zh-TW: 中文(繁體)
+    //  - ja: 日本語
+    //  - ko: 한국어
+    //  - cs: čeština
+    //  - pt-br: português
+    //  - tr: Türkçe
+    //  - pl: polski
+    "github.copilot.chat.localeOverride": "ja",
+    // エージェント モードで応答を生成する前に、Copilot が要求について深く考える思考ツールを有効にします。
+    "github.copilot.chat.agent.thinkingTool": true,
+    // Enable or disable Copilot completions for specified [languages](https://code.visualstudio.com/docs/languages/identifiers)
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false
+    },
+    // チャットでフォローアップ メッセージを提案するかどうか。
+    //  - always: すべてのチャット応答で
+    //  - firstOnly: 最初の応答のみ
+    //  - never: フォローアップの提案を無効にする
+    "github.copilot.chat.followUps": "always",
+    // コミット メッセージを生成する Copilot 要求に追加される一連の命令。
+    // 命令は次のところから発信できます:
+    // - ワークスペース内のファイル: `{ "file": "fileName" }`
+    // - 自然言語のテキスト: `{ "text": "Use conventional commit message format." }`
+    //
+    // 注: 手順は簡潔かつ正確に記述してください。指示が不十分である場合、Copilot の品質とパフォーマンスが低下する可能性があります。
+    "github.copilot.chat.commitMessageGeneration.instructions": [
+        {
+            "file": ".github/copilot-commit-message-instructions.md"
+        }
+    ],
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
+}

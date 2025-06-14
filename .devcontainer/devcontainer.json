@@ -1,0 +1,43 @@
+{
+    // コンテナの名前
+    "name": "Python Sandbox DevContainer",
+    // Python 3.11のベースイメージを使用
+    "image": "mcr.microsoft.com/devcontainers/python:3.11",
+    // コンテナ作成後に実行されるコマンド
+    "postCreateCommand": "pip install --upgrade pip && pip install -e .[test] && crawl4ai-setup",
+    // VS Codeの設定とカスタマイズ
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python", // Python言語サポート
+                "ms-python.debugpy", // Pythonデバッガー
+                "ms-python.vscode-pylance", // Python言語サーバー
+                "ms-python.vscode-python-envs", // Python環境マネージャー
+                "njpwerner.autodocstring", // Pythonドキュメント文字列の自動生成
+                "streetsidesoftware.code-spell-checker", // スペルチェッカー
+                "visualstudioexptteam.vscodeintellicode" // AI支援によるコード補完
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.formatting.provider": "black",
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": true,
+                "editor.formatOnSave": true,
+                "editor.codeActionsOnSave": {
+                    "source.organizeImports": "always"
+                }
+            }
+        }
+    },
+    // 開発時の環境変数
+    "remoteEnv": {
+        "PYTHONPATH": "${containerWorkspaceFolder}/src",
+        "PYTHONUNBUFFERED": "1"
+    },
+    // 追加のコンテナ設定
+    "features": {
+        //"ghcr.io/devcontainers/features/git:1": {}
+    },
+    // コンテナ内のユーザー
+    "remoteUser": "vscode"
+}

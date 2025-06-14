@@ -1,0 +1,21 @@
+{
+  // 型チェックの厳密度を設定します
+  // "off": 型チェックを無効にします
+  // "basic": 基本的な型チェックを行います
+  // "strict": より厳密な型チェックを行います
+  "typeCheckingMode": "basic",
+  // 型定義スタブファイル（.pyi）が見つからない場合のエラー報告を無効にします
+  "reportMissingTypeStubs": false,
+  // メンバーの型が不明な場合のエラー報告を無効にします
+  "reportUnknownMemberType": false,
+  // 変数の型が不明な場合のエラー報告を無効にします
+  "reportUnknownVariableType": false,
+  // 属性アクセスに関する問題の報告を無効にします
+  // （存在しない属性へのアクセスなど）
+  "reportAttributeAccessIssue": false,
+  // 型チェックから除外するディレクトリやファイルを指定します
+  "exclude": [
+    "**/site-packages",  // Pythonパッケージのインストールディレクトリを除外
+    "**/venv"           // 仮想環境ディレクトリを除外
+  ]
+}
