@@ -1,6 +1,6 @@
 {
     // コンテナの名前
-    "name": "Python Sandbox DevContainer",
+    "name": "My Python Project DevContainer",
     // Python 3.11のベースイメージを使用
     "image": "mcr.microsoft.com/devcontainers/python:3.11",
     // コンテナ作成後に実行されるコマンド
